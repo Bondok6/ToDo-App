@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
 import TodoInput from './TodoInput';
+import TodoList from './TodoList';
+import './styles/TodoContainer.css';
 
 const TodoContainer = () => {
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    getLocalTodos();
+  }, []);
+
+  useEffect(() => {
+    saveLocalTodos();
+  });
+
+  const saveLocalTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  };
+
+  const getLocalTodos = () => {
+    if (!localStorage.getItem('todos')) {
+      localStorage.setItem('todos', JSON.stringify([]));
+    } else {
+      let localTodos = JSON.parse(localStorage.getItem('todos'));
+      setTodos(localTodos);
+    }
+  };
   return (
     <>
-      <TodoInput
-        todos={todos}
-        setTodos={setTodos}
-        inputText={inputText}
-        setInputText={setInputText}
-      />
+      <Header />
+      <div className="todo-container">
+        <TodoInput
+          todos={todos}
+          setTodos={setTodos}
+          inputText={inputText}
+          setInputText={setInputText}
+        />
+
+        <TodoList todos={todos} setTodos={setTodos} />
+      </div>
     </>
   );
 };
