@@ -1,5 +1,7 @@
 import React from 'react';
+// Library to generate Unique ID
 import { v4 as uuidv4 } from 'uuid';
+import './styles/TodoInput.css';
 
 const TodoInput = ({ inputText, setInputText, todos, setTodos }) => {
   const inputHandler = (e) => {
@@ -8,6 +10,9 @@ const TodoInput = ({ inputText, setInputText, todos, setTodos }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    if (!inputText) return;
+
     setTodos([
       ...todos,
       {
@@ -16,6 +21,7 @@ const TodoInput = ({ inputText, setInputText, todos, setTodos }) => {
         text: inputText,
       },
     ]);
+
     // Clear input
     setInputText('');
   };
@@ -27,6 +33,7 @@ const TodoInput = ({ inputText, setInputText, todos, setTodos }) => {
         placeholder="Add Task"
         value={inputText}
         onChange={inputHandler}
+        className="text-input"
       />
     </form>
   );
