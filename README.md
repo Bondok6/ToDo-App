@@ -2,7 +2,7 @@
 
 > In this project, I built a simple To-Do App for managing the daily tasks and keeping track of tasks during the day. Build with React.js.
 
-<img src="" width="30%" /><img src="" width="70%" />
+https://user-images.githubusercontent.com/45231276/154133101-eaef1882-7885-4664-83f3-3ebb6d761a48.mp4
 
 ## Built With
 
