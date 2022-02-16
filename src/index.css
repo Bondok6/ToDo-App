@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --bg-primary: #3450a1;
+  --bg-secondary: #041955;
+
+  --white-clr: #fff;
+  --gray-clr: #bbc2d8;
+
+  --border-clr: #d103fc;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-primary);
+}
