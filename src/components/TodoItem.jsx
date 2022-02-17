@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import './styles/TodoItem.css';
+import '../styles/TodoItem.css';
 import trashIcon from './images/trash-icon.svg';
-import editIcon from './images/edit-icon.svg';
 
 const TodoItem = ({ todo, todos, setTodos }) => {
   const [isRemoved, setIsRemoved] = useState(false);
+
   const deleteHandler = () => {
     setIsRemoved(true);
     setTimeout(() => {
       setTodos(todos.filter((task) => task.id !== todo.id));
     }, 800);
   };
+
   const completeHandler = () => {
     setTodos(
       todos.map((task) => {
@@ -24,21 +25,7 @@ const TodoItem = ({ todo, todos, setTodos }) => {
       })
     );
   };
-  const editHandler = (e) => {
-    const label = e.target.parentNode.previousSibling.firstChild;
-    const newText = e.target.parentNode.previousSibling.firstChild.textContent;
-    setTodos(
-      todos.map((task) => {
-        if (task.id === todo.id) {
-          return {
-            ...task,
-            text: newText,
-          };
-        }
-        return task;
-      })
-    );
-  };
+
   return (
     <>
       <li className={`todo ${isRemoved ? 'fall' : ''}`}>
@@ -55,7 +42,6 @@ const TodoItem = ({ todo, todos, setTodos }) => {
         </div>
 
         <div className="todo__options">
-          <img src={editIcon} alt="edit-icon" onClick={editHandler} />
           <img src={trashIcon} alt="trash-icon" onClick={deleteHandler} />
         </div>
       </li>
