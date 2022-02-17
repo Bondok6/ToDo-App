@@ -9,4 +9,9 @@
   padding: 1rem 2rem;
   font-size: 2rem;
   letter-spacing: 0.4rem;
+  transition: 0.4s;
+}
+
+.text-input:focus {
+  border-left: 2rem solid var(--border-clr);
 }

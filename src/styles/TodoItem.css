@@ -87,12 +87,7 @@
 /* ___________________________Start Checkbox____________________ */
 
 .todo__options {
-  display: flex;
-  gap: 0.7rem;
-}
-
-.todo__options img {
-  width: 2.2rem;
+  width: 2.5rem;
   cursor: pointer;
 }
 
