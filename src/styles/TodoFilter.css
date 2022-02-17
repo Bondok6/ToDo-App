@@ -1,0 +1,14 @@
+.filter-section {
+  margin-bottom: 9rem;
+}
+
+.filter-section select {
+  width: 17rem;
+  font-size: 1.8rem;
+  padding: 0.6rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
+  color: var(--white-clr);
+}

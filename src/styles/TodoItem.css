@@ -43,25 +43,10 @@
   opacity: 0.8;
 }
 
-/* On mouse-over, add a grey background color */
-.todo__checkbox:hover input ~ .todo__checkmark {
-  background-color: var(--gray-clr);
-}
-
-/* When the checkbox is checked, add a purple background */
-.todo__checkbox input:checked ~ .todo__checkmark {
-  background-color: var(--border-clr);
-}
-
 /* Create the todo__checkmark/indicator (hidden when not checked) */
 .todo__checkmark:after {
   content: '';
   position: absolute;
-  display: none;
-}
-
-/* Show the todo__checkmark when checked */
-.todo__checkbox input:checked ~ .todo__checkmark:after {
   display: block;
 }
 
@@ -94,6 +79,10 @@
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+
+.bg-checkmark {
+  background-color: var(--border-clr);
 }
 
 .fall {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/TodoItem.css';
-import trashIcon from './images/trash-icon.svg';
+import trashIcon from '../images/trash-icon.svg';
 
 const TodoItem = ({ todo, todos, setTodos }) => {
   const [isRemoved, setIsRemoved] = useState(false);
@@ -13,6 +13,9 @@ const TodoItem = ({ todo, todos, setTodos }) => {
   };
 
   const completeHandler = () => {
+    // console.log(e.target.nextSibling);
+    // const checkmark = e.target.nextSibling;
+    // checkmark.style.backgroundColor = 'red';
     setTodos(
       todos.map((task) => {
         if (task.id === todo.id) {
@@ -37,7 +40,11 @@ const TodoItem = ({ todo, todos, setTodos }) => {
 
             <input type="checkbox" onClick={completeHandler} />
 
-            <span className="todo__checkmark"></span>
+            <span
+              className={`todo__checkmark ${
+                todo.completed ? 'bg-checkmark' : ''
+              }`}
+            ></span>
           </label>
         </div>
 
