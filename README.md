@@ -1,8 +1,8 @@
 # To-Do App
 
-> In this project, I built a simple To-Do App for managing the daily tasks and keeping track of tasks during the day. Build with React.js.
+> ### In this project, I built a simple To-Do App for managing the daily tasks and keeping track of tasks during the day. Build with React.js.
 
-https://user-images.githubusercontent.com/45231276/154133101-eaef1882-7885-4664-83f3-3ebb6d761a48.mp4
+https://user-images.githubusercontent.com/45231276/154490216-0e89916a-8332-420b-92f9-8619fb5197ba.mp4
 
 ## Built With
 
